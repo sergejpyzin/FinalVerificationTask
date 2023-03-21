@@ -23,7 +23,7 @@
             Console.Write($"{array[array.Length - 1]}");
             Console.WriteLine($"]");
         }
-        static string[] CreateArray (int length)
+        static string[] GetStringArray (int length)
         {
             string[] stringArray = new string[length];
             for (int i = 0; i < stringArray.Length; i++)
@@ -68,7 +68,7 @@
         static void Main(string[] args)
         {
             int arrayLength = GetNumberUserMassedge("Введите значение длинны массива: ");
-            string [] myArray = CreateArray(arrayLength);
+            string[] myArray = GetStringArray(arrayLength);
             string[] newArray = GetNewArray(myArray);
             PrintArray(newArray);
         }
