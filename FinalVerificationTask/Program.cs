@@ -13,6 +13,16 @@
                 else Console.WriteLine("Ошибка! Попробуйте еще раз.");
             }
         }
+        void PrintArray(int[] array)
+        {
+            Console.Write("[");
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                Console.Write($"{array[i]}, ");
+            }
+            Console.Write($"{array.Length - 1}");
+            Console.WriteLine($"]");
+        }
         static string[] CreateArray (int length)
         {
             string[] stringArray = new string[length];
