@@ -2,6 +2,17 @@
 {
     internal class Program
     {
+        static int GetNumberUserMassedge(string userMassedge)
+        {
+            int userNumber = 0;
+            while (true)
+            {
+                Console.Write(userMassedge);
+                bool check = int.TryParse(Console.ReadLine(), out userNumber);
+                if (check) return userNumber;
+                else Console.WriteLine("Ошибка! Попробуйте еще раз.");
+            }
+        }
         static string[] CreateArray (int length)
         {
             string[] stringArray = new string[length];
