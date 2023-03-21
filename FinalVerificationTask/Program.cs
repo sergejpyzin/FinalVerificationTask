@@ -2,6 +2,16 @@
 {
     internal class Program
     {
+        static string[] CreateArray (int length)
+        {
+            string[] stringArray = new string[length];
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                Console.Write ("Введите элемент массива: ");
+                stringArray[i] = Console.ReadLine();
+            }
+            return stringArray;
+        }
         static void GetNewArray (string[] array)
         {
             string[]newArray = new string[array.Length];
