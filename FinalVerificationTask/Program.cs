@@ -13,14 +13,14 @@
                 else Console.WriteLine("Ошибка! Попробуйте еще раз.");
             }
         }
-        void PrintArray(int[] array)
+        static void PrintArray(string[] array)
         {
             Console.Write("[");
             for (int i = 0; i < array.Length - 1; i++)
             {
-                Console.Write($"{array[i]}, ");
+                Console.Write($"{array[i]} ");
             }
-            Console.Write($"{array.Length - 1}");
+            Console.Write($"{array[array.Length - 1]}");
             Console.WriteLine($"]");
         }
         static string[] CreateArray (int length)
@@ -33,20 +33,44 @@
             }
             return stringArray;
         }
-        static void GetNewArray (string[] array)
+        static string[] GetNewArray (string[] array)
         {
-            string[]newArray = new string[array.Length];
+            int count = 0;
+
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i].Length <= 3)
                 {
-                    newArray[i] = array[i];                    
-                } 
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                string[] newArray = new string[count];
+                count = 0;
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    if (array[i].Length <= 3)
+                    {
+                        newArray[count] = array[i];
+                        count++;
+                    }
+                }
+                return newArray;
+            }
+            else 
+            {
+                string[] newArray = {" "};
+                return newArray;
             }
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int arrayLength = GetNumberUserMassedge("Введите значение длинны массива: ");
+            string [] myArray = CreateArray(arrayLength);
+            string[] newArray = GetNewArray(myArray);
+            PrintArray(newArray);
         }
     }
 }
