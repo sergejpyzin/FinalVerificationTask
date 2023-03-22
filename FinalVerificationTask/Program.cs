@@ -33,7 +33,7 @@
             }
             return stringArray;
         }
-        static string[] GetNewArray (string[] array)
+        static string[] GetNewStringArray (string[] array)
         {
             int count = 0;
 
@@ -69,7 +69,7 @@
         {
             int arrayLength = GetNumberUserMassedge("Введите значение длинны массива: ");
             string[] myArray = GetStringArray(arrayLength);
-            string[] newArray = GetNewArray(myArray);
+            string[] newArray = GetNewStringArray(myArray);
             PrintArray(newArray);
         }
     }
